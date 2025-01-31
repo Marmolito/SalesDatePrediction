@@ -20,12 +20,10 @@ namespace SalesDateProduction.Aplication
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<employeeDto>> GetAll()
+        public async Task<IEnumerable<EmployeeDto>> GetAll()
         {
-            var entities = await _employee.GetAll();
-            return _mapper.Map<IEnumerable<employeeDto>>(entities);
-
-            //implementacion de dominio
+            var employees = await _employee.GetAll();
+            return _mapper.Map<IEnumerable<EmployeeDto>>(employees);
         }
     }
 }

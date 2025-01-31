@@ -5,6 +5,18 @@
     "version": "1.0"
   },
   "paths": {
+    "/Customer": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Employee": {
       "get": {
         "tags": [

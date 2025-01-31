@@ -8,17 +8,17 @@ namespace SalesDateProductionAPI.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly IHandlerEmployee _employee;
+        private readonly IHandlerEmployee _iHandlerEmployee;
 
-        public EmployeeController(IHandlerEmployee employee)
+        public EmployeeController(IHandlerEmployee iHandlerEmployee)
         {
-            _employee = employee;
+            _iHandlerEmployee = iHandlerEmployee;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetEmployees()
         {
-            var employees = await _employee.GetAll();
+            var employees = await _iHandlerEmployee.GetAll();
             return Ok(employees);
         }
 

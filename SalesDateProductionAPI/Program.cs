@@ -11,14 +11,19 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 //builder.Services.AddDbContext<HotelesContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("cadenaSQL")));
 
-
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddAutoMapper(typeof(EmployeeProfile));
+
+
+builder.Services.AddScoped<IHandlerCustomer, ImpHandlerCustomer>();
+builder.Services.AddScoped<ICustomer, UseCaseCustomer>();
+builder.Services.AddScoped<ICustomerPersistancePort, Customer>();
+
 builder.Services.AddScoped<IHandlerEmployee, ImpHandlerEmployee>();
 builder.Services.AddScoped<IEmployee, UseCaseEmployee>();
-builder.Services.AddScoped<IEmployeePersistancePort, EmployeeEntity>();
+builder.Services.AddScoped<IEmployeePersistancePort, Employee>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

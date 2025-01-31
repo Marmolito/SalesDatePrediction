@@ -17,7 +17,7 @@ namespace Domain.Aplication
         {
             _iEmployeePersistancePort = iEmployeePersistancePort;
         }
-        public async Task<IEnumerable<employeeEntity>> GetAll()
+        public async Task<IEnumerable<EmployeeEntity>> GetAll()
         {
             var employee = await _iEmployeePersistancePort.GetAll();
             return employee;

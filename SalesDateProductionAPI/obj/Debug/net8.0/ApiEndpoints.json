@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "SalesDateProductionAPI.Controllers.CustomerController",
+    "Method": "GetEmployees",
+    "RelativePath": "Customer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SalesDateProductionAPI.Controllers.EmployeeController",
     "Method": "GetEmployees",
     "RelativePath": "Employee",

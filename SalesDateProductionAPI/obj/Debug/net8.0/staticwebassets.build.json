@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "FWqDNs+3UWJZtJfox3bTcZHPNlBsug+bwDOqp0WLQNM=",
+  "Source": "SalesDateProductionAPI",
+  "BasePath": "_content/SalesDateProductionAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

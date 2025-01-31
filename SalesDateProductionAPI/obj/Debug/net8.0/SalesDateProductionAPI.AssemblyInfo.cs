@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SalesDateProductionAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+979387aa765c51ea00313053a9617392fc375e16")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f60a155c782e30b6b891b151e385d797e05c335")]
 [assembly: System.Reflection.AssemblyProductAttribute("SalesDateProductionAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SalesDateProductionAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "SalesDateProductionAPI.Controllers.CustomerController",
-    "Method": "GetEmployees",
+    "Method": "GetCustomers",
     "RelativePath": "Customer",
     "HttpMethod": "GET",
     "IsController": true,

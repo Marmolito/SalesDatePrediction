@@ -16,7 +16,7 @@ namespace SalesDateProductionAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetEmployees()
+        public async Task<IActionResult> GetCustomers()
         {
             var predictedDateCustomer = await _iHandlercustomer.GetAll();
             return Ok(predictedDateCustomer);

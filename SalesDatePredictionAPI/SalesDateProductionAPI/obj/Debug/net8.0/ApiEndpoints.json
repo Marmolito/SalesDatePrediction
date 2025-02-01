@@ -36,8 +36,18 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SalesDateProductionAPI.Controllers.ProductController",
+    "Method": "GetProducts",
+    "RelativePath": "Product",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SalesDateProductionAPI.Controllers.ShipperController",
-    "Method": "GetCustomers",
+    "Method": "GetProducts",
     "RelativePath": "Shipper",
     "HttpMethod": "GET",
     "IsController": true,

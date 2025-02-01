@@ -52,6 +52,18 @@
         }
       }
     },
+    "/Product": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Shipper": {
       "get": {
         "tags": [

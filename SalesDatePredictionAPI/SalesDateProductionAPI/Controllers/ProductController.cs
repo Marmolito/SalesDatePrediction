@@ -9,27 +9,27 @@ namespace SalesDateProductionAPI.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class ShipperController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly IHandlerShipper _iHandlerShipper;
+        private readonly IHandlerProduct _iHandlerProduct;
 
-        public ShipperController(IHandlerShipper iHandlerShipper)
+        public ProductController(IHandlerProduct iHandlerProduct)
         {
-            _iHandlerShipper = iHandlerShipper;
+            _iHandlerProduct = iHandlerProduct;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            var shippers = await _iHandlerShipper.GetAll();
+            var products = await _iHandlerProduct.GetAll();
 
-            var predictedDateCustomerResponse = new ResponseHttpRequest<IEnumerable<ShipperDto>>
+            var productsResponse = new ResponseHttpRequest<IEnumerable<ProductDto>>
             {
                 isError = false,
-                data = shippers
+                data = products
             };
 
-            return Ok(predictedDateCustomerResponse);
+            return Ok(productsResponse);
 
         }
 

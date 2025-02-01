@@ -13,14 +13,19 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 //builder.Services.AddDbContext<HotelesContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("cadenaSQL")));
 
-
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(ShipperModelDtoProfile));
+builder.Services.AddAutoMapper(typeof(ShipperEntityModelProfile));
 builder.Services.AddAutoMapper(typeof(CustomerModelDtoProfile));
 builder.Services.AddAutoMapper(typeof(CustomerEntityModelProfile));
 builder.Services.AddAutoMapper(typeof(EmployeeModelDtoProfile));
 builder.Services.AddAutoMapper(typeof(EmployeeEntityModelProfile));
 builder.Services.AddAutoMapper(typeof(OrderEntityModelProfile));
 builder.Services.AddAutoMapper(typeof(OrderModelDtoProfile));
+
+builder.Services.AddScoped<IHandlerShipper, ImpHandlerShipper>();
+builder.Services.AddScoped<IShipper, UseCaseShipper>();
+builder.Services.AddScoped<IShipperPersistancePort, Shipper>();
 
 builder.Services.AddScoped<IHandlerOrder, ImpHandlerOrder>();
 builder.Services.AddScoped<IOrder, UseCaseOrder>();

@@ -34,5 +34,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalesDateProductionAPI.Controllers.ShipperController",
+    "Method": "GetCustomers",
+    "RelativePath": "Shipper",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

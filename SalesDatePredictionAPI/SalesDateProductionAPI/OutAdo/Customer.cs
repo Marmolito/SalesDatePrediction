@@ -7,6 +7,7 @@ using SalesDatePrediction.Domain.Ispi;
 using SalesDatePrediction.Domain.Models;
 using System;
 using AutoMapper;
+using SalesDateProductionAPI.Models.Entities;
 
 namespace SalesDateProductionAPI.Out
 {
@@ -45,7 +46,7 @@ namespace SalesDateProductionAPI.Out
                                 WHERE Diferencias.diferencia_dias IS NOT NULL
                                 GROUP BY C.contactname";
 
-                var predictedDateCustomer = await connection.QueryAsync<CustomerModel>(query);
+                var predictedDateCustomer = await connection.QueryAsync<CustomerEntity>(query);
 
                 return _mapper.Map<IEnumerable<CustomerModel>>(predictedDateCustomer);
             }

@@ -51,6 +51,18 @@
           }
         }
       }
+    },
+    "/Shipper": {
+      "get": {
+        "tags": [
+          "Shipper"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": { }

@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "FWqDNs+3UWJZtJfox3bTcZHPNlBsug+bwDOqp0WLQNM=",
-  "Source": "SalesDateProductionAPI",
-  "BasePath": "_content/SalesDateProductionAPI",
+  "Hash": "wDpWhAQJQhQbSqDHxaziV2eg1iYx9WQ1vFha+sDP5R8=",
+  "Source": "SalesDatePrediction.Infraestruture",
+  "BasePath": "_content/SalesDatePrediction.Infraestruture",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

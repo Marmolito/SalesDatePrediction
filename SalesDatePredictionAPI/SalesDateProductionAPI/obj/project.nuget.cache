@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aV04fun05OM=",
+  "dgSpecHash": "KiqD2aaWukY=",
   "success": true,
-  "projectFilePath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestructure.csproj",
+  "projectFilePath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestruture.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fabian Marmolejo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Fabian Marmolejo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

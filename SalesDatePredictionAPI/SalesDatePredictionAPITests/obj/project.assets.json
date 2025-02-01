@@ -2681,40 +2681,26 @@
           "bin/placeholder/SalesDatePrediction.Domain.dll": {}
         }
       },
-      "SalesDatePrediction.Infraestructure/1.0.0": {
+      "SalesDatePrediction.Infraestruture/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Dapper": "2.1.35",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.1",
           "NPOI": "2.7.2",
+          "SalesDatePrediction.Aplication": "1.0.0",
           "SalesDatePrediction.Domain": "1.0.0",
-          "SalesDateProduction.Aplication": "1.0.0",
           "Swashbuckle.AspNetCore": "6.6.2"
         },
         "compile": {
-          "bin/placeholder/SalesDatePrediction.Infraestructure.dll": {}
+          "bin/placeholder/SalesDatePrediction.Infraestruture.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SalesDatePrediction.Infraestructure.dll": {}
+          "bin/placeholder/SalesDatePrediction.Infraestruture.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
-      },
-      "SalesDateProduction.Aplication/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "SalesDatePrediction.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SalesDateProduction.Aplication.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SalesDateProduction.Aplication.dll": {}
-        }
       }
     }
   },
@@ -7701,15 +7687,10 @@
       "path": "../SalesDatePrediction.Domain/SalesDatePrediction.Domain.csproj",
       "msbuildProject": "../SalesDatePrediction.Domain/SalesDatePrediction.Domain.csproj"
     },
-    "SalesDatePrediction.Infraestructure/1.0.0": {
+    "SalesDatePrediction.Infraestruture/1.0.0": {
       "type": "project",
-      "path": "../SalesDateProductionAPI/SalesDatePrediction.Infraestructure.csproj",
-      "msbuildProject": "../SalesDateProductionAPI/SalesDatePrediction.Infraestructure.csproj"
-    },
-    "SalesDateProduction.Aplication/1.0.0": {
-      "type": "project",
-      "path": "../SalesDateProduction.Aplication/SalesDateProduction.Aplication.csproj",
-      "msbuildProject": "../SalesDateProduction.Aplication/SalesDateProduction.Aplication.csproj"
+      "path": "../SalesDateProductionAPI/SalesDatePrediction.Infraestruture.csproj",
+      "msbuildProject": "../SalesDateProductionAPI/SalesDatePrediction.Infraestruture.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7719,7 +7700,7 @@
       "Moq >= 4.20.72",
       "SalesDatePrediction.Aplication >= 1.0.0",
       "SalesDatePrediction.Domain >= 1.0.0",
-      "SalesDatePrediction.Infraestructure >= 1.0.0",
+      "SalesDatePrediction.Infraestruture >= 1.0.0",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.9.3",
       "xunit.runner.visualstudio >= 2.5.3"
@@ -7763,8 +7744,8 @@
             "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj": {
               "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj"
             },
-            "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestructure.csproj": {
-              "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestructure.csproj"
+            "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestruture.csproj": {
+              "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestruture.csproj"
             }
           }
         }

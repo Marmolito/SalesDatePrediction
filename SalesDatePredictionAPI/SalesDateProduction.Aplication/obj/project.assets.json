@@ -334,9 +334,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj",
-      "projectName": "SalesDateProduction.Aplication",
-      "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj",
+      "projectUniqueName": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj",
+      "projectName": "SalesDatePrediction.Aplication",
+      "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj",
       "packagesPath": "C:\\Users\\Fabian Marmolejo\\.nuget\\packages\\",
       "outputPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\obj\\",
       "projectStyle": "PackageReference",

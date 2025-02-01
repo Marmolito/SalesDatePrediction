@@ -179,3 +179,13 @@ E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredict
 E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.pdb
 E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.genruntimeconfig.cache
 E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPITests\obj\Debug\net8.0\ref\SalesDatePredictionAPITests.dll
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\bin\Debug\net8.0\CoverletSourceRootsMapping_SalesDatePredictionAPITests
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.csproj.AssemblyReference.cache
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.GeneratedMSBuildEditorConfig.editorconfig
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.AssemblyInfoInputs.cache
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.AssemblyInfo.cs
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.csproj.CoreCompileInputs.cache
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.sourcelink.json
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.dll
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\refint\SalesDatePredictionAPITests.dll
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDatePredictionAPITests.pdb

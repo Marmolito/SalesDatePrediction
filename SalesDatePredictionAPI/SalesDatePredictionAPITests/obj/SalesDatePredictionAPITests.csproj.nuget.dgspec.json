@@ -100,11 +100,11 @@
               "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDatePrediction.Domain\\SalesDatePrediction.Domain.csproj": {
                 "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDatePrediction.Domain\\SalesDatePrediction.Domain.csproj"
               },
-              "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj": {
-                "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj"
+              "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj": {
+                "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj"
               },
-              "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDateProductionAPI.csproj": {
-                "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDateProductionAPI.csproj"
+              "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestruture.csproj": {
+                "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestruture.csproj"
               }
             }
           }
@@ -170,12 +170,12 @@
         }
       }
     },
-    "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj": {
+    "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj",
-        "projectName": "SalesDateProduction.Aplication",
-        "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj",
+        "projectUniqueName": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj",
+        "projectName": "SalesDatePrediction.Aplication",
+        "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj",
         "packagesPath": "C:\\Users\\Fabian Marmolejo\\.nuget\\packages\\",
         "outputPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\obj\\",
         "projectStyle": "PackageReference",
@@ -245,12 +245,12 @@
         }
       }
     },
-    "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDateProductionAPI.csproj": {
+    "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestruture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDateProductionAPI.csproj",
-        "projectName": "SalesDateProductionAPI",
-        "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDateProductionAPI.csproj",
+        "projectUniqueName": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestruture.csproj",
+        "projectName": "SalesDatePrediction.Infraestruture",
+        "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\SalesDatePrediction.Infraestruture.csproj",
         "packagesPath": "C:\\Users\\Fabian Marmolejo\\.nuget\\packages\\",
         "outputPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProductionAPI\\obj\\",
         "projectStyle": "PackageReference",
@@ -276,8 +276,8 @@
               "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDatePrediction.Domain\\SalesDatePrediction.Domain.csproj": {
                 "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDatePrediction.Domain\\SalesDatePrediction.Domain.csproj"
               },
-              "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj": {
-                "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDateProduction.Aplication.csproj"
+              "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj": {
+                "projectPath": "E:\\Estudios\\Sales Date Prediction -Codifico\\SalesDatePrediction\\SalesDatePredictionAPI\\SalesDateProduction.Aplication\\SalesDatePrediction.Aplication.csproj"
               }
             }
           }

@@ -10,6 +10,8 @@ using SalesDateProduction.Aplication.Models;
 using Domain.Aplication;
 using SalesDatePrediction.Domain.Ispi;
 using SalesDateProductionAPI.Models.Entities;
+using SalesDatePrediction.Domain.Models;
+using SalesDatePrediction.Domain.Exceptions;
 
 namespace SalesDatePredictionAPITests
 {
@@ -19,49 +21,39 @@ namespace SalesDatePredictionAPITests
         public async Task GetOrdersByCustomerId_ReturnsOrders_WhenCustomerHasOrders()
         {
             var mockOrderPersistancePort = new Mock<IOrderPersistancePort>();
-
-            var expectedOrders = new List<OrderEntity>
+            var customerId = 1;
+            var expectedOrders = new List<OrderModel>
         {
-            new OrderEntity
-            {
-                orderid = 1,
-                requireddate = DateTime.UtcNow.AddDays(5),
-                shippeddate = DateTime.UtcNow.AddDays(2),
-                shipname = "envio 1",
-                shipaddress = "direccion 1",
-                shipcity = "ciudad 1"
-            },
-            new OrderEntity
-            {
-                orderid = 2,
-                requireddate = DateTime.UtcNow.AddDays(10),
-                shippeddate = DateTime.UtcNow.AddDays(7),
-                shipname = "envio 2",
-                shipaddress = "direccion 2",
-                shipcity = "ciudad 2"
-            }
+            new OrderModel { orderid = 1, requireddate = DateTime.Now, shippeddate = DateTime.Now, shipname = "Order 1", shipaddress = "Address 1", shipcity = "City 1" },
+            new OrderModel { orderid = 2, requireddate = DateTime.Now, shippeddate = DateTime.Now, shipname = "Order 2", shipaddress = "Address 2", shipcity = "City 2" }
         };
 
-            mockOrderPersistancePort.Setup(port => port.GetOrdersByCustomerId(1))
-                                    .ReturnsAsync(expectedOrders);
+            mockOrderPersistancePort
+                .Setup(port => port.GetOrdersByCustomerId(customerId))
+                .ReturnsAsync(expectedOrders);
 
             var orderService = new UseCaseOrder(mockOrderPersistancePort.Object);
-
-            var result = await orderService.GetOrdersByCustomerId(1);
+            var result = await orderService.GetOrdersByCustomerId(customerId);
 
             Assert.NotNull(result);
             Assert.Equal(expectedOrders.Count, result.Count());
+            Assert.Equal(expectedOrders, result);
+        }
 
-            foreach (var expectedOrder in expectedOrders)
-            {
-                var actualOrder = result.FirstOrDefault(o => o.orderid == expectedOrder.orderid);
-                Assert.NotNull(actualOrder);
-                Assert.Equal(expectedOrder.requireddate, actualOrder.requireddate);
-                Assert.Equal(expectedOrder.shippeddate, actualOrder.shippeddate);
-                Assert.Equal(expectedOrder.shipname, actualOrder.shipname);
-                Assert.Equal(expectedOrder.shipaddress, actualOrder.shipaddress);
-                Assert.Equal(expectedOrder.shipcity, actualOrder.shipcity);
-            }
+        [Fact]
+        public async Task GetOrdersByCustomerId_ThrowsNotFoundException_WhenCustomerHasNoOrders()
+        {
+            var mockOrderPersistancePort = new Mock<IOrderPersistancePort>();
+            var customerId = 1;
+
+            mockOrderPersistancePort
+                .Setup(port => port.GetOrdersByCustomerId(customerId))
+                .ReturnsAsync(new List<OrderModel>());
+
+            var orderService = new UseCaseOrder(mockOrderPersistancePort.Object);
+
+            var exception = await Assert.ThrowsAsync<NotFoundException>(() => orderService.GetOrdersByCustomerId(customerId));
+            Assert.Equal("No se encontraron Ordenes para el Cliente con el ID: " + customerId, exception.Message);
         }
     }
 }

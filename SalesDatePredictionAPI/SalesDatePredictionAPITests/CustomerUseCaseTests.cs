@@ -10,73 +10,47 @@ using SalesDateProduction.Aplication.Models;
 using Domain.Aplication;
 using SalesDatePrediction.Domain.Ispi;
 using SalesDatePrediction.Domain.Models;
+using SalesDatePrediction.Domain.Exceptions;
 
 namespace SalesDatePredictionAPITests
 {
     public class CustomerUseCaseTests
     {
         [Fact]
-        public async Task GetAll_ReturnsListOfCustomers()
+        public async Task GetAll_ReturnsCustomers_WhenCustomersExist()
         {
             var mockCustomerPersistancePort = new Mock<ICustomerPersistancePort>();
             var expectedCustomers = new List<CustomerModel>
         {
-            new CustomerModel
-            {
-                ContactName = "Fabian Marmolejo",
-                LastOrderDate = DateTime.UtcNow.AddDays(-10),
-                NextPredictedDate = DateTime.UtcNow.AddDays(20)
-            },
-            new CustomerModel
-            {
-                ContactName = "Juan Ortiz",
-                LastOrderDate = DateTime.UtcNow.AddDays(-5),
-                NextPredictedDate = DateTime.UtcNow.AddDays(15)
-            }
+            new CustomerModel { ContactName = "John Doe", LastOrderDate = DateTime.Now, NextPredictedDate = DateTime.Now.AddDays(30) },
+            new CustomerModel { ContactName = "Jane Smith", LastOrderDate = DateTime.Now, NextPredictedDate = DateTime.Now.AddDays(45) }
         };
 
-            mockCustomerPersistancePort.Setup(port => port.GetAll())
-                                       .ReturnsAsync(expectedCustomers);
+            mockCustomerPersistancePort
+                .Setup(port => port.GetAll())
+                .ReturnsAsync(expectedCustomers);
 
-            var useCaseCustomer = new UseCaseCustomer(mockCustomerPersistancePort.Object);
-
-            var result = await useCaseCustomer.GetAll();
+            var customerService = new UseCaseCustomer(mockCustomerPersistancePort.Object);
+            var result = await customerService.GetAll();
 
             Assert.NotNull(result);
             Assert.Equal(expectedCustomers.Count, result.Count());
-
-            foreach (var expectedCustomer in expectedCustomers)
-            {
-                var actualCustomer = result.FirstOrDefault(c => c.ContactName == expectedCustomer.ContactName);
-                Assert.Equal(expectedCustomer.LastOrderDate, actualCustomer.LastOrderDate);
-                Assert.Equal(expectedCustomer.NextPredictedDate, actualCustomer.NextPredictedDate); 
-            }
+            Assert.Equal(expectedCustomers, result);
         }
 
         [Fact]
-        public async Task GetAll_ReturnsEmptyList_WhenNoCustomersExist()
+        public async Task GetAll_ThrowsNotFoundException_WhenNoCustomersExist()
         {
             var mockCustomerPersistancePort = new Mock<ICustomerPersistancePort>();
-            mockCustomerPersistancePort.Setup(port => port.GetAll())
-                                       .ReturnsAsync(new List<CustomerModel>());
 
-            var useCaseCustomer = new UseCaseCustomer(mockCustomerPersistancePort.Object);
-            var result = await useCaseCustomer.GetAll();
+            mockCustomerPersistancePort
+                .Setup(port => port.GetAll())
+                .ReturnsAsync(new List<CustomerModel>());
 
-            Assert.NotNull(result);
-            Assert.Empty(result);
+            var customerService = new UseCaseCustomer(mockCustomerPersistancePort.Object);
+
+            var exception = await Assert.ThrowsAsync<NotFoundException>(() => customerService.GetAll());
+            Assert.Equal("No se encontraron Clientes", exception.Message);
         }
-
-        [Fact]
-        public async Task GetAll_ThrowsException_WhenPersistancePortFails()
-        {
-            var mockCustomerPersistancePort = new Mock<ICustomerPersistancePort>();
-            mockCustomerPersistancePort.Setup(port => port.GetAll())
-                                       .ThrowsAsync(new Exception("Error en el puerto de persistencia"));
-
-            var useCaseCustomer = new UseCaseCustomer(mockCustomerPersistancePort.Object);
-            await Assert.ThrowsAsync<Exception>(() => useCaseCustomer.GetAll());
-        }
-
     }
 }

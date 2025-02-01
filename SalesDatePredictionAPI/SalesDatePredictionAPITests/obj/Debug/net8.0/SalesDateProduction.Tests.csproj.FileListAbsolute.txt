@@ -1,0 +1,7 @@
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\bin\Debug\net8.0\CoverletSourceRootsMapping_SalesDateProduction.Tests
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDateProduction.Tests.csproj.AssemblyReference.cache
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDateProduction.Tests.GeneratedMSBuildEditorConfig.editorconfig
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDateProduction.Tests.AssemblyInfoInputs.cache
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDateProduction.Tests.AssemblyInfo.cs
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDateProduction.Tests.csproj.CoreCompileInputs.cache
+E:\Estudios\Sales Date Prediction -Codifico\SalesDatePrediction\SalesDatePredictionAPI\SalesDatePredictionAPITests\obj\Debug\net8.0\SalesDateProduction.Tests.sourcelink.json

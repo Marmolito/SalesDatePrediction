@@ -21,7 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SalesDatePrediction.Domain\SalesDatePrediction.Domain.csproj" />
     <ProjectReference Include="..\SalesDateProduction.Aplication\SalesDatePrediction.Aplication.csproj" />
-    <ProjectReference Include="..\SalesDateProductionAPI\SalesDatePrediction.Infraestructure.csproj" />
+    <ProjectReference Include="..\SalesDateProductionAPI\SalesDatePrediction.Infraestruture.csproj" />
   </ItemGroup>
 
   <ItemGroup>

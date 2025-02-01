@@ -4,6 +4,7 @@ using SalesDatePrediction.Domain.Iapi;
 using SalesDatePrediction.Domain.Ispi;
 using SalesDateProduction.Aplication;
 using SalesDateProduction.Aplication.Mappers;
+using SalesDateProductionAPI.Mappers;
 using SalesDateProductionAPI.Out;
 using System;
 
@@ -14,8 +15,16 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddAutoMapper(typeof(EmployeeProfile));
+builder.Services.AddAutoMapper(typeof(CustomerModelDtoProfile));
+builder.Services.AddAutoMapper(typeof(CustomerEntityModelProfile));
+builder.Services.AddAutoMapper(typeof(EmployeeModelDtoProfile));
+builder.Services.AddAutoMapper(typeof(EmployeeEntityModelProfile));
+builder.Services.AddAutoMapper(typeof(OrderEntityModelProfile));
+builder.Services.AddAutoMapper(typeof(OrderModelDtoProfile));
 
+builder.Services.AddScoped<IHandlerOrder, ImpHandlerOrder>();
+builder.Services.AddScoped<IOrder, UseCaseOrder>();
+builder.Services.AddScoped<IOrderPersistancePort, Order>();
 
 builder.Services.AddScoped<IHandlerCustomer, ImpHandlerCustomer>();
 builder.Services.AddScoped<ICustomer, UseCaseCustomer>();

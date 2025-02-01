@@ -9,6 +9,6 @@ namespace SalesDatePrediction.Domain.Iapi
 {
     public interface IEmployee
     {
-        Task<IEnumerable<EmployeeEntity>> GetAll();
+        Task<IEnumerable<EmployeeModel>> GetAll();
     }
 }

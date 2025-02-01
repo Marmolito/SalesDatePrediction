@@ -1,25 +1,26 @@
-﻿using Dapper;
-using System.Data.SqlClient;
+﻿using AutoMapper;
+using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using SalesDatePrediction.Domain.Ispi;
 using SalesDatePrediction.Domain.Models;
-using System;
+using SalesDatePrediction.Models.Entities;
 
 namespace SalesDateProductionAPI.Out
 {
     public class Employee : IEmployeePersistancePort
     {
         private readonly string _connectionString;
+        private readonly IMapper _mapper;
 
-        public Employee(IConfiguration configuration)
+        public Employee(IConfiguration configuration, IMapper mapper)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
+            _mapper = mapper;
         }
 
 
-        async Task<IEnumerable<EmployeeEntity>> IEmployeePersistancePort.GetAll()
+        async Task<IEnumerable<EmployeeModel>> IEmployeePersistancePort.GetAll()
         {
             using var connection = new SqlConnection(_connectionString);
 
@@ -32,7 +33,7 @@ namespace SalesDateProductionAPI.Out
                                 FROM HR.Employees";
                 var reservas = await connection.QueryAsync<EmployeeEntity>(query);
 
-                return reservas;
+                return _mapper.Map<IEnumerable<EmployeeModel>>(reservas);
             }
             catch (Exception ex)
             {

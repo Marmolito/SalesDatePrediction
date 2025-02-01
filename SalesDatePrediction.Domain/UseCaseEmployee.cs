@@ -1,4 +1,5 @@
-﻿using SalesDatePrediction.Domain.Iapi;
+﻿using SalesDatePrediction.Domain.Exceptions;
+using SalesDatePrediction.Domain.Iapi;
 using SalesDatePrediction.Domain.Ispi;
 using SalesDatePrediction.Domain.Models;
 using System;
@@ -17,9 +18,15 @@ namespace Domain.Aplication
         {
             _iEmployeePersistancePort = iEmployeePersistancePort;
         }
-        public async Task<IEnumerable<EmployeeEntity>> GetAll()
+        public async Task<IEnumerable<EmployeeModel>> GetAll()
         {
             var employee = await _iEmployeePersistancePort.GetAll();
+
+            if (employee == null || !employee.Any())
+            {
+                throw new NotFoundException("No se encontraron Empleados");
+            }
+
             return employee;
         }
     }

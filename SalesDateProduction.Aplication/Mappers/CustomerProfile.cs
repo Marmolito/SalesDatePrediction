@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace SalesDateProduction.Aplication.Mappers
 {
-    public class CustomerProfile : Profile
+    public class CustomerModelDtoProfile : Profile
     {
-        public CustomerProfile()
+        public CustomerModelDtoProfile()
         {
-            CreateMap<CustomerEntity, CustomerDto>();
+            CreateMap<CustomerModel, CustomerDto>();
             // Otros mapeos si los necesitas
         }
     }

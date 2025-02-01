@@ -9,6 +9,6 @@ namespace SalesDatePrediction.Domain.Ispi
 {
     public interface ICustomerPersistancePort
     {
-        Task<IEnumerable<CustomerEntity>> GetAll();
+        Task<IEnumerable<CustomerModel>> GetAll();
     }
 }

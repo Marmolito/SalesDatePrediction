@@ -1,4 +1,5 @@
-﻿using SalesDatePrediction.Domain.Iapi;
+﻿using SalesDatePrediction.Domain.Exceptions;
+using SalesDatePrediction.Domain.Iapi;
 using SalesDatePrediction.Domain.Ispi;
 using SalesDatePrediction.Domain.Models;
 using System;
@@ -17,9 +18,15 @@ namespace Domain.Aplication
         {
             _iCustomerPersistancePort = iCustomerPersistancePort;
         }
-        public async Task<IEnumerable<CustomerEntity>> GetAll()
+        public async Task<IEnumerable<CustomerModel>> GetAll()
         {
             var predictedDateCustomer = await _iCustomerPersistancePort.GetAll();
+
+            if (predictedDateCustomer == null || !predictedDateCustomer.Any())
+            {
+                throw new NotFoundException("No se encontraron Clientes");
+            }
+
             return predictedDateCustomer;
         }
     }

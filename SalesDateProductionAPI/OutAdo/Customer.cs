@@ -6,20 +6,23 @@ using Microsoft.Extensions.Configuration;
 using SalesDatePrediction.Domain.Ispi;
 using SalesDatePrediction.Domain.Models;
 using System;
+using AutoMapper;
 
 namespace SalesDateProductionAPI.Out
 {
     public class Customer : ICustomerPersistancePort
     {
         private readonly string _connectionString;
+        private readonly IMapper _mapper;
 
-        public Customer(IConfiguration configuration)
+        public Customer(IConfiguration configuration, IMapper mapper)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
+            _mapper = mapper;
         }
 
 
-        async Task<IEnumerable<CustomerEntity>> ICustomerPersistancePort.GetAll()
+        async Task<IEnumerable<CustomerModel>> ICustomerPersistancePort.GetAll()
         {
             using var connection = new SqlConnection(_connectionString);
 
@@ -38,17 +41,17 @@ namespace SalesDateProductionAPI.Out
                                     DATEADD(DAY, AVG(Diferencias.diferencia_dias), MAX(O.orderdate)) AS NextPredictedDate
                                 FROM Sales.Orders O  
                                 JOIN Sales.Customers C ON O.custid = C.custid
-                                LEFT JOIN Diferencias ON O.custid = Diferencias.custid
+                                JOIN Diferencias ON O.custid = Diferencias.custid
                                 WHERE Diferencias.diferencia_dias IS NOT NULL
                                 GROUP BY C.contactname";
 
-                var predictedDateCustomer = await connection.QueryAsync<CustomerEntity>(query);
+                var predictedDateCustomer = await connection.QueryAsync<CustomerModel>(query);
 
-                return predictedDateCustomer;
+                return _mapper.Map<IEnumerable<CustomerModel>>(predictedDateCustomer);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar Empleados. {ex.Message}");
+                throw new Exception($"Error al buscar Clientes. {ex.Message}");
             }
 
         }

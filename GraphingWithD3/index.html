@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Barras con D3.js</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script defer src="code.js"></script> <!-- Asegúrate de enlazar tu archivo JS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input {
+            width: 300px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #5bc0de;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #31b0d5;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="dataInput"><strong>Source Data:</strong></label>
+    <input type="text" id="dataInput" placeholder="Ingrese números separados por coma">
+    <button id="updateButton">Update Data</button>
+
+    <div id="chart"></div>
+
+</body>
+</html>

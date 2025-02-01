@@ -50,5 +50,54 @@ namespace SalesDateProductionAPI.Out
             }
 
         }
+
+        async Task<bool> IOrderPersistancePort.CreateOrderProduct(OrderProductModel orderProduct)
+        {
+            using var connection = new SqlConnection(_connectionString);
+
+            try
+            {
+                string query = @"
+            DECLARE @RowsAffected INT = 0;
+
+            BEGIN TRY
+                BEGIN TRANSACTION;
+
+                -- Insertar una nueva orden
+                INSERT INTO Sales.Orders (empid, shipperid, shipname, shipaddress, shipcity, orderdate, requireddate, shippeddate, freight, shipcountry)
+                VALUES (@EmpID, @ShipperID, @ShipName, @ShipAddress, @ShipCity, @OrderDate, @RequiredDate, @ShippedDate, @Freight, @ShipCountry);
+
+                -- Obtener el OrderID generado
+                DECLARE @NewOrderID INT = SCOPE_IDENTITY();
+
+                -- Insertar un producto en la orden creada
+                INSERT INTO Sales.OrderDetails (orderid, productid, unitprice, qty, discount)
+                VALUES (@NewOrderID, @ProductID, @UnitPrice, @Qty, @Discount);
+
+                COMMIT TRANSACTION;
+
+                -- Establecer el número de filas afectadas
+                SET @RowsAffected = 1;
+            END TRY
+            BEGIN CATCH
+                ROLLBACK TRANSACTION;
+                SET @RowsAffected = 0;
+                THROW;
+            END CATCH;
+
+            -- Retornar el número de filas afectadas
+            SELECT @RowsAffected AS RowsAffected;
+                    "
+                ;
+
+                var rowsAffected = await connection.ExecuteScalarAsync<int>(query, orderProduct);
+
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al crear Orden. {ex.Message}");
+            }
+        }
     }
 }

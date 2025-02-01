@@ -55,5 +55,71 @@ namespace SalesDatePredictionAPITests
             var exception = await Assert.ThrowsAsync<NotFoundException>(() => orderService.GetOrdersByCustomerId(customerId));
             Assert.Equal("No se encontraron Ordenes para el Cliente con el ID: " + customerId, exception.Message);
         }
+
+        [Fact]
+        public async Task CreateOrderProduct_DoesNotThrowException_WhenOrderIsCreatedSuccessfully()
+        {
+            // Arrange
+            var mockOrderPersistancePort = new Mock<IOrderPersistancePort>();
+            var orderProduct = new OrderProductModel
+            {
+                EmpID = 101,
+                OrderDate = DateTime.Now,
+                RequiredDate = DateTime.Now.AddDays(7),
+                ShippedDate = null,
+                ShipperID = 2,
+                Freight = 25.50m,
+                ShipName = "Ejemplo Shipping",
+                ShipAddress = "Calle Falsa 123",
+                ShipCity = "Bogotá",
+                ShipCountry = "Colombia",
+                ProductID = 10,
+                UnitPrice = 15.00m,
+                Qty = 3,
+                Discount = 0.05m
+            };
+
+            mockOrderPersistancePort
+                .Setup(port => port.CreateOrderProduct(orderProduct))
+                .ReturnsAsync(true);
+
+            var orderService = new UseCaseOrder(mockOrderPersistancePort.Object);
+            var exception = await Record.ExceptionAsync(() => orderService.CreateOrderProduct(orderProduct));
+            Assert.Null(exception);
+        }
+
+        [Fact]
+        public async Task CreateOrderProduct_ThrowsNotFoundException_WhenOrderCreationFails()
+        {
+            var mockOrderPersistancePort = new Mock<IOrderPersistancePort>();
+            var orderProduct = new OrderProductModel
+            {
+                EmpID = 101,
+                OrderDate = DateTime.Now,
+                RequiredDate = DateTime.Now.AddDays(7),
+                ShippedDate = null,
+                ShipperID = 2,
+                Freight = 25.50m,
+                ShipName = "Ejemplo Shipping",
+                ShipAddress = "Calle Falsa 123",
+                ShipCity = "Bogotá",
+                ShipCountry = "Colombia",
+                ProductID = 10,
+                UnitPrice = 15.00m,
+                Qty = 3,
+                Discount = 0.05m
+            };
+
+            mockOrderPersistancePort
+                .Setup(port => port.CreateOrderProduct(orderProduct))
+                .ReturnsAsync(false);
+
+            var orderService = new UseCaseOrder(mockOrderPersistancePort.Object);
+            var errorMessaggeCreateProduct = "No se pudo crear la Orden";
+            var exception = await Assert.ThrowsAsync<NotFoundException>(() => orderService.CreateOrderProduct(orderProduct));
+            Assert.Equal(errorMessaggeCreateProduct, exception.Message);
+        }
+
+
     }
 }

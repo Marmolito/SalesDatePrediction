@@ -14,6 +14,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 //builder.Services.AddDbContext<HotelesContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("cadenaSQL")));
 
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(OrderProductDtoModelProfile));
 builder.Services.AddAutoMapper(typeof(ProductModelDtoProfile));
 builder.Services.AddAutoMapper(typeof(ProductEntityModelProfile));
 builder.Services.AddAutoMapper(typeof(ShipperModelDtoProfile));

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SalesDatePrediction.Aplication.Models;
 using SalesDatePrediction.Domain.Exceptions;
 using SalesDateProduction.Aplication;
 using SalesDateProduction.Aplication.Models;
@@ -30,6 +31,22 @@ namespace SalesDateProductionAPI.Controllers
             };
 
             return Ok(ordersResponse);
+
+        }
+
+        [HttpPost()]
+        public async Task<IActionResult> CreateOrderProduct(OrderProductDto orderProduct)
+        {
+            await _iHandlerOrder.CreateOrdeProduct(orderProduct);
+
+            var orderProductResponse = new ResponseHttpRequest<object>
+            {
+                isError = false,
+                data = null,
+                messagge = "Orden creada exitosamente"
+            };
+
+            return Ok(orderProductResponse);
 
         }
 

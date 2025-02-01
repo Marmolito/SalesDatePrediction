@@ -21,6 +21,22 @@
   },
   {
     "ContainingType": "SalesDateProductionAPI.Controllers.OrdersController",
+    "Method": "CreateOrderProduct",
+    "RelativePath": "Orders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderProduct",
+        "Type": "SalesDatePrediction.Aplication.Models.OrderProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SalesDateProductionAPI.Controllers.OrdersController",
     "Method": "GetOrdersByCustomerId",
     "RelativePath": "Orders/{id}",
     "HttpMethod": "GET",

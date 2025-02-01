@@ -14,6 +14,7 @@ namespace Domain.Aplication
     {
         private readonly IOrderPersistancePort _iOrderPersistancePort;
         const string errorMessagge = "No se encontraron Ordenes para el Cliente con el ID: ";
+        const string errorMessaggeCreateProduct = "No se pudo crear la Orden";
 
         public UseCaseOrder(IOrderPersistancePort iOrderPersistancePort)
         {
@@ -30,5 +31,15 @@ namespace Domain.Aplication
 
             return ordersByCustomerId;
         }
+        public async Task CreateOrderProduct(OrderProductModel orderProduct)
+        {
+            var orderCreated = await _iOrderPersistancePort.CreateOrderProduct(orderProduct);
+
+            if (!orderCreated)
+            {
+                throw new NotFoundException(errorMessaggeCreateProduct);
+            }
+        }
+
     }
 }

@@ -10,5 +10,6 @@ namespace SalesDatePrediction.Domain.Iapi
     public interface IOrder
     {
         Task<IEnumerable<OrderModel>> GetOrdersByCustomerId(int id);
+        Task CreateOrderProduct(OrderProductModel orderProduct);
     }
 }

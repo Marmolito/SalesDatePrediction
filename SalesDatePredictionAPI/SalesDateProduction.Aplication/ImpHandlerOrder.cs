@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using SalesDatePrediction.Aplication.Models;
 using SalesDatePrediction.Domain.Iapi;
+using SalesDatePrediction.Domain.Models;
 using SalesDateProduction.Aplication.Models;
 using System;
 using System.Collections.Generic;
@@ -24,6 +26,12 @@ namespace SalesDateProduction.Aplication
         {
             var OrdersByClientId = await _iOrder.GetOrdersByCustomerId(id);
             return _mapper.Map<IEnumerable<OrderDto>>(OrdersByClientId);
+
+        }
+        public async Task CreateOrdeProduct(OrderProductDto orderProduct)
+        {
+            var mappedOrderProduct = _mapper.Map<OrderProductModel>(orderProduct);
+            await _iOrder.CreateOrderProduct(mappedOrderProduct);
 
         }
     }

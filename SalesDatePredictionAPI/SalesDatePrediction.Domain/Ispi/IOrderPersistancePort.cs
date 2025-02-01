@@ -10,5 +10,6 @@ namespace SalesDatePrediction.Domain.Ispi
     public interface IOrderPersistancePort
     {
         Task<IEnumerable<OrderModel>> GetOrdersByCustomerId(int id);
+        Task<bool> CreateOrderProduct(OrderProductModel orderProduct);
     }
 }

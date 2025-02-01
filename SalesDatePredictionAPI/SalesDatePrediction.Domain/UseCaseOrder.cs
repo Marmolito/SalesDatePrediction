@@ -13,6 +13,7 @@ namespace Domain.Aplication
     public class UseCaseOrder : IOrder
     {
         private readonly IOrderPersistancePort _iOrderPersistancePort;
+        const string errorMessagge = "No se encontraron Ordenes para el Cliente con el ID: ";
 
         public UseCaseOrder(IOrderPersistancePort iOrderPersistancePort)
         {
@@ -24,7 +25,7 @@ namespace Domain.Aplication
 
             if (ordersByCustomerId == null || !ordersByCustomerId.Any())
             {
-                throw new NotFoundException("No se encontraron Ordenes para el Cliente con el ID: " + id);
+                throw new NotFoundException(errorMessagge + id);
             }
 
             return ordersByCustomerId;

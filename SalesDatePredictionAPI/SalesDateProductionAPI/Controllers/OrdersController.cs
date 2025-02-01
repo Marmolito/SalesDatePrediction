@@ -21,30 +21,16 @@ namespace SalesDateProductionAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetOrdersByCustomerId(int id)
         {
-            try
+            var orders = await _iHandlerOrder.GetOrdersByCustomerId(id);
+
+            var ordersResponse = new ResponseHttpRequest<IEnumerable<OrderDto>>
             {
-                var orders = await _iHandlerOrder.GetOrdersByCustomerId(id);
+                isError = false,
+                data = orders
+            };
 
-                var ordersResponse = new ResponseHttpRequest<IEnumerable<OrderDto>>
-                {
-                    isError = false,
-                    data = orders
-                };
+            return Ok(ordersResponse);
 
-                return Ok(ordersResponse);
-            }
-            catch (NotFoundException ex)
-            {
-
-                var ordersResponse = new ResponseHttpRequest<IEnumerable<OrderDto>>
-                {
-                    isError = true,
-                    data = null,
-                    messagge = ex.Message
-                };
-
-                return NotFound(ordersResponse);
-            }
         }
 
     }

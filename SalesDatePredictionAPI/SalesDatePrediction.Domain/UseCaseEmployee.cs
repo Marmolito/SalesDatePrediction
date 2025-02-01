@@ -13,6 +13,7 @@ namespace Domain.Aplication
     public class UseCaseEmployee : IEmployee
     {
         private readonly IEmployeePersistancePort _iEmployeePersistancePort;
+        const string errorMessage = "No se encontraron Empleados";
 
         public UseCaseEmployee(IEmployeePersistancePort iEmployeePersistancePort)
         {
@@ -24,7 +25,7 @@ namespace Domain.Aplication
 
             if (employee == null || !employee.Any())
             {
-                throw new NotFoundException("No se encontraron Empleados");
+                throw new NotFoundException(errorMessage);
             }
 
             return employee;

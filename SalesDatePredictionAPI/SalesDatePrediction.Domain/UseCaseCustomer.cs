@@ -13,6 +13,7 @@ namespace Domain.Aplication
     public class UseCaseCustomer : ICustomer
     {
         private readonly ICustomerPersistancePort _iCustomerPersistancePort;
+        const string errorMessagge = "No se encontraron Clientes";
 
         public UseCaseCustomer(ICustomerPersistancePort iCustomerPersistancePort)
         {
@@ -24,7 +25,7 @@ namespace Domain.Aplication
 
             if (predictedDateCustomer == null || !predictedDateCustomer.Any())
             {
-                throw new NotFoundException("No se encontraron Clientes");
+                throw new NotFoundException(errorMessagge);
             }
 
             return predictedDateCustomer;

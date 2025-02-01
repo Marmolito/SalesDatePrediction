@@ -21,30 +21,16 @@ namespace SalesDateProductionAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetEmployees()
         {
-            try
+            var employees = await _iHandlerEmployee.GetAll();
+
+            var employeesResponse = new ResponseHttpRequest<IEnumerable<EmployeeDto>>
             {
-                var employees = await _iHandlerEmployee.GetAll();
+                isError = false,
+                data = employees
+            };
 
-                var employeesResponse = new ResponseHttpRequest<IEnumerable<EmployeeDto>>
-                {
-                    isError = false,
-                    data = employees
-                };
+            return Ok(employeesResponse);
 
-                return Ok(employeesResponse);
-            }
-            catch (NotFoundException ex)
-            {
-
-                var employeesResponse = new ResponseHttpRequest<IEnumerable<OrderDto>>
-                {
-                    isError = true,
-                    data = null,
-                    messagge = ex.Message
-                };
-
-                return NotFound(employeesResponse);
-            }
         }
 
     }

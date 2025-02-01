@@ -21,30 +21,16 @@ namespace SalesDateProductionAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCustomers()
         {
-            try
+            var predictedDateCustomer = await _iHandlercustomer.GetAll();
+
+            var predictedDateCustomerResponse = new ResponseHttpRequest<IEnumerable<CustomerDto>>
             {
-                var predictedDateCustomer = await _iHandlercustomer.GetAll();
+                isError = false,
+                data = predictedDateCustomer
+            };
 
-                var predictedDateCustomerResponse = new ResponseHttpRequest<IEnumerable<CustomerDto>>
-                {
-                    isError = false,
-                    data = predictedDateCustomer
-                };
+            return Ok(predictedDateCustomerResponse);
 
-                return Ok(predictedDateCustomerResponse);
-            }
-            catch (NotFoundException ex)
-            {
-
-                var predictedDateCustomerResponse = new ResponseHttpRequest<IEnumerable<CustomerDto>>
-                {
-                    isError = true,
-                    data = null,
-                    messagge = ex.Message
-                };
-
-                return NotFound(predictedDateCustomerResponse);
-            }
         }
 
     }

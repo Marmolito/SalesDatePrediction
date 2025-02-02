@@ -1,0 +1,48 @@
+.container {
+    width: 90%;
+    margin: auto;
+  }
+  .search-bar {
+    margin-bottom: 15px;
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    cursor: pointer;
+  }
+  button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  .view-orders {
+    color: red;
+    background: none;
+  }
+  .new-order {
+    color: green;
+    background: none;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .pagination button {
+    margin: 0 5px;
+  }
+  

@@ -1,0 +1,112 @@
+/* Contenedor del formulario */
+.order-form {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title-new-order {
+  color: white;
+  background-color: rgb(58, 155, 58);
+  height: 50px;
+  text-align: left; /* Alineación a la izquierda */
+  padding: 0 20px; /* Ajuste del padding para que solo haya espacio a los lados */
+  margin: 0;
+  line-height: 50px; /* Centra el texto verticalmente en el contenedor */
+  font-weight: 400;
+}
+
+/* Cuadrícula para los campos del formulario */
+.form-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 16px; /* Espacio entre campos */
+  margin-bottom: 20px;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(1); /* Dos columnas */
+  gap: 16px; /* Espacio entre campos */
+  margin-bottom: 20px;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Dos columnas */
+  gap: 16px; /* Espacio entre campos */
+  margin-bottom: 20px;
+}
+
+.form-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Dos columnas */
+  gap: 16px; /* Espacio entre campos */
+  margin-bottom: 20px;
+}
+
+.form-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(1); /* Dos columnas */
+  gap: 16px; /* Espacio entre campos */
+  margin-bottom: 20px;
+}
+
+.form-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(1); /* Dos columnas */
+  gap: 16px; /* Espacio entre campos */
+  margin-bottom: 20px;
+}
+
+.form-grid-7 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Dos columnas */
+  gap: 16px; /* Espacio entre campos */
+  margin-bottom: 20px;
+}
+
+
+
+/* Botones de acción */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* Estilos para los botones */
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-datepicker-content {
+  z-index: 1000 !important;
+}
+
+/* Campos de formulario */
+mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field {
+  height: 56px; /* Ajusta según la altura de los otros campos */
+  display: flex;
+  align-items: center;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0px !important; /* Evita que se expanda demasiado */
+}
+
+.mat-input-element {
+  height: 40px !important; /* Ajusta el input dentro del campo */
+  padding: 8px 0 !important;
+}

@@ -1,0 +1,9 @@
+/* Estilos para la tabla */
+table {
+    width: 100%;
+  }
+  
+  .mat-elevation-z8 {
+    padding: 20px;
+    margin: 20px;
+  }

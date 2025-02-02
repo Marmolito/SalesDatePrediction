@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Sales Date Prediction</h1>
+
+  <!-- Campo de búsqueda -->
+  <mat-form-field appearance="outline">
+    <mat-label>Search by Customer Name</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Customer Name">
+  </mat-form-field>
+
+  <!-- Tabla -->
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!-- Columnas -->
+    <ng-container matColumnDef="customerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer Name</th>
+      <td mat-cell *matCellDef="let customer">{{ customer.contactName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastOrderDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Order Date</th>
+      <td mat-cell *matCellDef="let customer">{{ customer.lastOrderDate | date: 'dd/MM/yyyy' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nextPredictedOrderDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Next Predicted Order Date</th>
+      <td mat-cell *matCellDef="let customer">{{ customer.nextPredictedDate | date: 'dd/MM/yyyy' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let customer">
+        <button mat-button color="primary" (click)="viewOrders(customer)">
+          VIEW ORDERS
+        </button>
+        <button mat-button color="accent" (click)="createOrder(customer)">
+          NEW ORDER
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Filas -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Paginación -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

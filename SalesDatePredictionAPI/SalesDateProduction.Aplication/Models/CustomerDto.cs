@@ -2,8 +2,10 @@
 {
     public class CustomerDto
     {
+
+        public int custid { get; set; }
         public string ContactName { get; set; }
-        public DateTime LastOrderDate { get; set; }
-        public DateTime NextPredictedDate { get; set; }
+        public string LastOrderDate { get; set; }
+        public string NextPredictedDate { get; set; }
     }
 }

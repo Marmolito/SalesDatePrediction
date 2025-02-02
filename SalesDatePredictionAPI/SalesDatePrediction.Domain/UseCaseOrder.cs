@@ -33,6 +33,39 @@ namespace Domain.Aplication
         }
         public async Task CreateOrderProduct(OrderProductModel orderProduct)
         {
+
+            string orderDateString = orderProduct.OrderDate;
+            DateTime orderDate;
+
+            string requiredDateString = orderProduct.RequiredDate;
+            DateTime RequiredDate;
+
+            string shippedDateString = orderProduct.ShippedDate;
+            DateTime ShippedDate;
+
+            string inputFormat = "yyyy/MM/dd";
+            if (
+                DateTime.TryParseExact(orderDateString, inputFormat, null, System.Globalization.DateTimeStyles.None, out orderDate) &&
+                DateTime.TryParseExact(requiredDateString, inputFormat, null, System.Globalization.DateTimeStyles.None, out RequiredDate) &&
+                DateTime.TryParseExact(shippedDateString, inputFormat, null, System.Globalization.DateTimeStyles.None, out ShippedDate)
+                )
+            {
+                string formattedOrderDate = orderDate.ToString("dd/MM/yyyy");
+                string formattedRequiredDateString = RequiredDate.ToString("dd/MM/yyyy");
+                string formattedShippedDateString = ShippedDate.ToString("dd/MM/yyyy");
+
+                orderProduct.OrderDate = formattedOrderDate;
+                orderProduct.RequiredDate = formattedRequiredDateString;
+                orderProduct.ShippedDate = formattedShippedDateString;
+            }
+            else
+            {
+                string formattedOrderDate = "Fecha inválida";
+                string formattedRequiredDateString = "Fecha inválida";
+                string formattedShippedDateString = "Fecha inválida";
+            }
+
+
             var orderCreated = await _iOrderPersistancePort.CreateOrderProduct(orderProduct);
 
             if (!orderCreated)

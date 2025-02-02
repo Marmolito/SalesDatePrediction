@@ -37,6 +37,7 @@ namespace SalesDateProductionAPI.Out
                                     FROM Sales.Orders O
                                 )
                                 SELECT DISTINCT
+	                                C.custid,
                                     C.contactname AS ContactName,
                                     MAX(O.orderdate) AS LastOrderDate,
                                     DATEADD(DAY, AVG(Diferencias.diferencia_dias), MAX(O.orderdate)) AS NextPredictedDate
@@ -44,7 +45,7 @@ namespace SalesDateProductionAPI.Out
                                 JOIN Sales.Customers C ON O.custid = C.custid
                                 JOIN Diferencias ON O.custid = Diferencias.custid
                                 WHERE Diferencias.diferencia_dias IS NOT NULL
-                                GROUP BY C.contactname";
+                                GROUP BY C.contactname, C.custid";
 
                 var predictedDateCustomer = await connection.QueryAsync<CustomerEntity>(query);
 

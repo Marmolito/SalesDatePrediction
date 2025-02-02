@@ -113,6 +113,10 @@
       "OrderProductDto": {
         "type": "object",
         "properties": {
+          "custID": {
+            "type": "integer",
+            "format": "int32"
+          },
           "empID": {
             "type": "integer",
             "format": "int32"
@@ -135,15 +139,14 @@
           },
           "orderDate": {
             "type": "string",
-            "format": "date-time"
+            "nullable": true
           },
           "requiredDate": {
             "type": "string",
-            "format": "date-time"
+            "nullable": true
           },
           "shippedDate": {
             "type": "string",
-            "format": "date-time",
             "nullable": true
           },
           "freight": {

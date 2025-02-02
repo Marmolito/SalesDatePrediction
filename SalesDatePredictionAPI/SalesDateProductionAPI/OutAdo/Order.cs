@@ -64,8 +64,8 @@ namespace SalesDateProductionAPI.Out
                 BEGIN TRANSACTION;
 
                 -- Insertar una nueva orden
-                INSERT INTO Sales.Orders (empid, shipperid, shipname, shipaddress, shipcity, orderdate, requireddate, shippeddate, freight, shipcountry)
-                VALUES (@EmpID, @ShipperID, @ShipName, @ShipAddress, @ShipCity, @OrderDate, @RequiredDate, @ShippedDate, @Freight, @ShipCountry);
+                INSERT INTO Sales.Orders (empid, custid, shipperid, shipname, shipaddress, shipcity, orderdate, requireddate, shippeddate, freight, shipcountry)
+                VALUES (@EmpID, @CustId, @ShipperID, @ShipName, @ShipAddress, @ShipCity, @OrderDate, @RequiredDate, @ShippedDate, @Freight, @ShipCountry);
 
                 -- Obtener el OrderID generado
                 DECLARE @NewOrderID INT = SCOPE_IDENTITY();

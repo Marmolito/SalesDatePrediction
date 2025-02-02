@@ -20,7 +20,7 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetAll_ReturnsProducts_WhenProductsExist()
         {
-            var mockProductPersistancePort = new Mock<IProductPersistancePort>();
+            var mockProductPersistancePort = new Mock<IProductOutAdo>();
             var expectedProducts = new List<ProductModel>
         {
             new ProductModel { productid = 1, productname = "Product A" },
@@ -42,7 +42,7 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetAll_ThrowsNotFoundException_WhenNoProductsExist()
         {
-            var mockProductPersistancePort = new Mock<IProductPersistancePort>();
+            var mockProductPersistancePort = new Mock<IProductOutAdo>();
             var errorMessage = "No se encontraron Productos";
 
             mockProductPersistancePort

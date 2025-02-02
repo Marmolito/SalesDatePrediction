@@ -12,11 +12,11 @@ namespace Domain.Aplication
 {
     public class UseCaseOrder : IOrder
     {
-        private readonly IOrderPersistancePort _iOrderPersistancePort;
+        private readonly IOrderOutAdo _iOrderPersistancePort;
         const string errorMessagge = "No se encontraron Ordenes para el Cliente con el ID: ";
         const string errorMessaggeCreateProduct = "No se pudo crear la Orden";
 
-        public UseCaseOrder(IOrderPersistancePort iOrderPersistancePort)
+        public UseCaseOrder(IOrderOutAdo iOrderPersistancePort)
         {
             _iOrderPersistancePort = iOrderPersistancePort;
         }

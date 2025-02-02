@@ -19,7 +19,7 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetAll_ReturnsEmployees_WhenEmployeesExist()
         {
-            var mockEmployeePersistancePort = new Mock<IEmployeePersistancePort>();
+            var mockEmployeePersistancePort = new Mock<IEmployeeOutAdo>();
             var expectedEmployees = new List<EmployeeModel>
         {
             new EmployeeModel { empid = 1, fullName = "John Doe" },
@@ -41,7 +41,7 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetAll_ThrowsNotFoundException_WhenNoEmployeesExist()
         {
-            var mockEmployeePersistancePort = new Mock<IEmployeePersistancePort>();
+            var mockEmployeePersistancePort = new Mock<IEmployeeOutAdo>();
 
             mockEmployeePersistancePort
                 .Setup(port => port.GetAll())

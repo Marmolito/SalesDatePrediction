@@ -19,11 +19,11 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetAll_ReturnsCustomers_WhenCustomersExist()
         {
-            var mockCustomerPersistancePort = new Mock<ICustomerPersistancePort>();
+            var mockCustomerPersistancePort = new Mock<ICustomerOutAdo>();
             var expectedCustomers = new List<CustomerModel>
         {
-            new CustomerModel { ContactName = "John Doe", LastOrderDate = DateTime.Now, NextPredictedDate = DateTime.Now.AddDays(30) },
-            new CustomerModel { ContactName = "Jane Smith", LastOrderDate = DateTime.Now, NextPredictedDate = DateTime.Now.AddDays(45) }
+            new CustomerModel { ContactName = "John Doe", LastOrderDate = "02/02/2000", NextPredictedDate = "02/02/2000" },
+            new CustomerModel { ContactName = "Jane Smith", LastOrderDate = "02/02/2000", NextPredictedDate = "02/02/2000" }
         };
 
             mockCustomerPersistancePort
@@ -41,7 +41,7 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetAll_ThrowsNotFoundException_WhenNoCustomersExist()
         {
-            var mockCustomerPersistancePort = new Mock<ICustomerPersistancePort>();
+            var mockCustomerPersistancePort = new Mock<ICustomerOutAdo>();
 
             mockCustomerPersistancePort
                 .Setup(port => port.GetAll())

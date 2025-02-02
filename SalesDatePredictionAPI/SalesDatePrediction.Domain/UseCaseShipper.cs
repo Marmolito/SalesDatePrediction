@@ -12,10 +12,10 @@ namespace Domain.Aplication
 {
     public class UseCaseShipper : IShipper
     {
-        private readonly IShipperPersistancePort _iShipperPersistancePort;
+        private readonly IShipperOutAdo _iShipperPersistancePort;
         const string errorMessagge = "No se encontraron Transportadoras";
 
-        public UseCaseShipper(IShipperPersistancePort iShipperPersistancePort)
+        public UseCaseShipper(IShipperOutAdo iShipperPersistancePort)
         {
             _iShipperPersistancePort = iShipperPersistancePort;
         }

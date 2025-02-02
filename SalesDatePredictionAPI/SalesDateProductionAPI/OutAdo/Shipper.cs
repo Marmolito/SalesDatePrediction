@@ -8,7 +8,7 @@ using SalesDateProductionAPI.Models.Entities;
 
 namespace SalesDateProductionAPI.Out
 {
-    public class Shipper : IShipperPersistancePort
+    public class Shipper : IShipperOutAdo
     {
         private readonly string _connectionString;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace SalesDateProductionAPI.Out
             _mapper = mapper;
         }
 
-        async Task<IEnumerable<ShipperModel>> IShipperPersistancePort.GetAll()
+        async Task<IEnumerable<ShipperModel>> IShipperOutAdo.GetAll()
         {
             using var connection = new SqlConnection(_connectionString);
 

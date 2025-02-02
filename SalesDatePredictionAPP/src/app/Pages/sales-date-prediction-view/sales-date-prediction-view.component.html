@@ -1,15 +1,29 @@
+<div class="form-grid-1 bg-black-header">
+  <div class="flex-30">
+    <h3 class="title-new-order">Sales Date Prediction App</h3>
+  </div>
+  <div class="flex-70 align-right">
+    <img
+      src="https://www.relativity.com/sites/relativity/cache/file/8A7A1F93-542F-41B8-BE0C5483829AD272_partnerlogolarge.png"
+      alt="App Logo" class="logo">
+  </div>
+</div>
+
 <div class="container">
-  <h1>Sales Date Prediction</h1>
 
-  <!-- Campo de búsqueda -->
-  <mat-form-field appearance="outline">
-    <mat-label>Search by Customer Name</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Customer Name">
-  </mat-form-field>
+  <div class="form-grid-1 top">
+    <div class="flex-30">
+      <h1>Customers</h1>
+    </div>
+    <div class="flex-70">
+      <mat-form-field class="full-width align-left">
+        <mat-label>Customer Name</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Customer Name">
+      </mat-form-field>
+    </div>
+  </div>
 
-  <!-- Tabla -->
-  <table mat-table [dataSource]="dataSource" matSort>
-    <!-- Columnas -->
+  <table mat-table [dataSource]="dataSource" matSort class="tabla-borde">
     <ng-container matColumnDef="customerName">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer Name</th>
       <td mat-cell *matCellDef="let customer">{{ customer.contactName}}</td>
@@ -26,22 +40,20 @@
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
-      <td mat-cell *matCellDef="let customer">
-        <button mat-button color="primary" (click)="viewOrders(customer)">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let customer" class="actions-cell">
+        <button mat-button class="custom-red" (click)="viewOrders(customer)">
           VIEW ORDERS
         </button>
-        <button mat-button color="accent" (click)="createOrder(customer)">
+        <button mat-button class="custom-green" (click)="createOrder(customer)">
           NEW ORDER
         </button>
       </td>
     </ng-container>
 
-    <!-- Filas -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <!-- Paginación -->
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

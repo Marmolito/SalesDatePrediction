@@ -89,8 +89,6 @@ export class NewOrderFormComponent {
     }), { validators: dateValidator };;
 
     this.loadDropdownData();
-
-    console.log(this.products[0])
   }
 
   loadDropdownData(): void {
@@ -120,7 +118,6 @@ export class NewOrderFormComponent {
   }
 
   closeForm(): void {
-    console.log('Form closed', ' ', this.customerId, ' ', this.orderForm.get('employee')?.value);
     this.dialogRef.close();
   }
 

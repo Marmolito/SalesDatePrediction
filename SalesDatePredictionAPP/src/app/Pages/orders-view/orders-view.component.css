@@ -1,9 +1,44 @@
 /* Estilos para la tabla */
 table {
-    width: 100%;
-  }
-  
-  .mat-elevation-z8 {
-    padding: 20px;
-    margin: 20px;
-  }
+  width: 100%;
+  border: 1px solid rgb(209, 209, 209);
+}
+
+.mat-elevation-z8,
+.mat-mdc-elevation-specific.mat-elevation-z8 {
+  margin: 0px !important;
+  box-shadow: none;
+}
+
+.mat-elevation-z8 {
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Botones de acción */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.red-text {
+  color: rgb(156, 60, 60);
+}
+
+.title-new-order {
+  color: white;
+  background-color: rgb(156, 60, 60);
+  height: 50px;
+  text-align: left;
+  /* Alineación a la izquierda */
+  padding: 0 20px;
+  /* Ajuste del padding para que solo haya espacio a los lados */
+  margin: 0;
+  line-height: 50px;
+  /* Centra el texto verticalmente en el contenedor */
+  font-weight: 400;
+  border-bottom: 1.5px solid;
+  border-image: linear-gradient(to bottom, #929292, #7c7c7c) 1;
+}

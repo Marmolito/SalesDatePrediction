@@ -9,7 +9,7 @@ using SalesDateProduction.Aplication;
 
 namespace SalesDateProductionAPI.Out
 {
-    public class Product : IProductPersistancePort
+    public class Product : IProductOutAdo
     {
         private readonly string _connectionString;
         private readonly IMapper _mapper;
@@ -20,7 +20,7 @@ namespace SalesDateProductionAPI.Out
             _mapper = mapper;
         }
 
-        async Task<IEnumerable<ProductModel>> IProductPersistancePort.GetAll()
+        async Task<IEnumerable<ProductModel>> IProductOutAdo.GetAll()
         {
             using var connection = new SqlConnection(_connectionString);
 

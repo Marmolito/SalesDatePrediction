@@ -10,7 +10,7 @@ using SalesDateProductionAPI.Models.Entities;
 
 namespace SalesDateProductionAPI.Out
 {
-    public class Order : IOrderPersistancePort
+    public class Order : IOrderOutAdo
     {
         private readonly string _connectionString;
         private readonly IMapper _mapper;
@@ -22,7 +22,7 @@ namespace SalesDateProductionAPI.Out
         }
 
 
-        async Task<IEnumerable<OrderModel>> IOrderPersistancePort.GetOrdersByCustomerId(int id)
+        async Task<IEnumerable<OrderModel>> IOrderOutAdo.GetOrdersByCustomerId(int id)
         {
             using var connection = new SqlConnection(_connectionString);
 
@@ -51,7 +51,7 @@ namespace SalesDateProductionAPI.Out
 
         }
 
-        async Task<bool> IOrderPersistancePort.CreateOrderProduct(OrderProductModel orderProduct)
+        async Task<bool> IOrderOutAdo.CreateOrderProduct(OrderProductModel orderProduct)
         {
             using var connection = new SqlConnection(_connectionString);
 

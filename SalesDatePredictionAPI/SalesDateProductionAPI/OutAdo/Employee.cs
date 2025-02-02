@@ -8,7 +8,7 @@ using SalesDatePrediction.Models.Entities;
 
 namespace SalesDateProductionAPI.Out
 {
-    public class Employee : IEmployeePersistancePort
+    public class Employee : IEmployeeOutAdo
     {
         private readonly string _connectionString;
         private readonly IMapper _mapper;
@@ -20,7 +20,7 @@ namespace SalesDateProductionAPI.Out
         }
 
 
-        async Task<IEnumerable<EmployeeModel>> IEmployeePersistancePort.GetAll()
+        async Task<IEnumerable<EmployeeModel>> IEmployeeOutAdo.GetAll()
         {
             using var connection = new SqlConnection(_connectionString);
 

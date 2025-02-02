@@ -28,23 +28,23 @@ builder.Services.AddAutoMapper(typeof(OrderModelDtoProfile));
 
 builder.Services.AddScoped<IHandlerProduct, ImpHandlerProduct>();
 builder.Services.AddScoped<IProduct, UseCaseProduct>();
-builder.Services.AddScoped<IProductPersistancePort, Product>();
+builder.Services.AddScoped<IProductOutAdo, Product>();
 
 builder.Services.AddScoped<IHandlerShipper, ImpHandlerShipper>();
 builder.Services.AddScoped<IShipper, UseCaseShipper>();
-builder.Services.AddScoped<IShipperPersistancePort, Shipper>();
+builder.Services.AddScoped<IShipperOutAdo, Shipper>();
 
 builder.Services.AddScoped<IHandlerOrder, ImpHandlerOrder>();
 builder.Services.AddScoped<IOrder, UseCaseOrder>();
-builder.Services.AddScoped<IOrderPersistancePort, Order>();
+builder.Services.AddScoped<IOrderOutAdo, Order>();
 
 builder.Services.AddScoped<IHandlerCustomer, ImpHandlerCustomer>();
 builder.Services.AddScoped<ICustomer, UseCaseCustomer>();
-builder.Services.AddScoped<ICustomerPersistancePort, Customer>();
+builder.Services.AddScoped<ICustomerOutAdo, Customer>();
 
 builder.Services.AddScoped<IHandlerEmployee, ImpHandlerEmployee>();
 builder.Services.AddScoped<IEmployee, UseCaseEmployee>();
-builder.Services.AddScoped<IEmployeePersistancePort, Employee>();
+builder.Services.AddScoped<IEmployeeOutAdo, Employee>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

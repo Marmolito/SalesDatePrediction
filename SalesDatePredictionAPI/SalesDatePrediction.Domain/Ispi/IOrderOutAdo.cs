@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace SalesDatePrediction.Domain.Ispi
 {
-    public interface IShipperPersistancePort
+    public interface IOrderOutAdo
     {
-        Task<IEnumerable<ShipperModel>> GetAll();
+        Task<IEnumerable<OrderModel>> GetOrdersByCustomerId(int id);
+        Task<bool> CreateOrderProduct(OrderProductModel orderProduct);
     }
 }

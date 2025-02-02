@@ -11,7 +11,7 @@ using SalesDateProductionAPI.Models.Entities;
 
 namespace SalesDateProductionAPI.Out
 {
-    public class Customer : ICustomerPersistancePort
+    public class Customer : ICustomerOutAdo
     {
         private readonly string _connectionString;
         private readonly IMapper _mapper;
@@ -23,7 +23,7 @@ namespace SalesDateProductionAPI.Out
         }
 
 
-        async Task<IEnumerable<CustomerModel>> ICustomerPersistancePort.GetAll()
+        async Task<IEnumerable<CustomerModel>> ICustomerOutAdo.GetAll()
         {
             using var connection = new SqlConnection(_connectionString);
 

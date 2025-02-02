@@ -20,12 +20,12 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetOrdersByCustomerId_ReturnsOrders_WhenCustomerHasOrders()
         {
-            var mockOrderPersistancePort = new Mock<IOrderPersistancePort>();
+            var mockOrderPersistancePort = new Mock<IOrderOutAdo>();
             var customerId = 1;
             var expectedOrders = new List<OrderModel>
         {
-            new OrderModel { orderid = 1, requireddate = DateTime.Now, shippeddate = DateTime.Now, shipname = "Order 1", shipaddress = "Address 1", shipcity = "City 1" },
-            new OrderModel { orderid = 2, requireddate = DateTime.Now, shippeddate = DateTime.Now, shipname = "Order 2", shipaddress = "Address 2", shipcity = "City 2" }
+            new OrderModel { orderid = 1, requireddate = "02/02/2000", shippeddate = "02/02/2000", shipname = "Order 1", shipaddress = "Address 1", shipcity = "City 1" },
+            new OrderModel { orderid = 2, requireddate = "02/02/2000", shippeddate = "02/02/2000", shipname = "Order 2", shipaddress = "Address 2", shipcity = "City 2" }
         };
 
             mockOrderPersistancePort
@@ -43,7 +43,7 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetOrdersByCustomerId_ThrowsNotFoundException_WhenCustomerHasNoOrders()
         {
-            var mockOrderPersistancePort = new Mock<IOrderPersistancePort>();
+            var mockOrderPersistancePort = new Mock<IOrderOutAdo>();
             var customerId = 1;
 
             mockOrderPersistancePort
@@ -60,12 +60,12 @@ namespace SalesDatePredictionAPITests
         public async Task CreateOrderProduct_DoesNotThrowException_WhenOrderIsCreatedSuccessfully()
         {
             // Arrange
-            var mockOrderPersistancePort = new Mock<IOrderPersistancePort>();
+            var mockOrderPersistancePort = new Mock<IOrderOutAdo>();
             var orderProduct = new OrderProductModel
             {
                 EmpID = 101,
-                OrderDate = DateTime.Now,
-                RequiredDate = DateTime.Now.AddDays(7),
+                OrderDate = "02/02/2000",
+                RequiredDate = "02/02/2000",
                 ShippedDate = null,
                 ShipperID = 2,
                 Freight = 25.50m,
@@ -91,12 +91,12 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task CreateOrderProduct_ThrowsNotFoundException_WhenOrderCreationFails()
         {
-            var mockOrderPersistancePort = new Mock<IOrderPersistancePort>();
+            var mockOrderPersistancePort = new Mock<IOrderOutAdo>();
             var orderProduct = new OrderProductModel
             {
                 EmpID = 101,
-                OrderDate = DateTime.Now,
-                RequiredDate = DateTime.Now.AddDays(7),
+                OrderDate = "02/02/2000",
+                RequiredDate = "02/02/2000",
                 ShippedDate = null,
                 ShipperID = 2,
                 Freight = 25.50m,

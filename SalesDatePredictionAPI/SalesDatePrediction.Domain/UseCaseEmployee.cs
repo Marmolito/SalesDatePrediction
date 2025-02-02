@@ -12,10 +12,10 @@ namespace Domain.Aplication
 {
     public class UseCaseEmployee : IEmployee
     {
-        private readonly IEmployeePersistancePort _iEmployeePersistancePort;
+        private readonly IEmployeeOutAdo _iEmployeePersistancePort;
         const string errorMessage = "No se encontraron Empleados";
 
-        public UseCaseEmployee(IEmployeePersistancePort iEmployeePersistancePort)
+        public UseCaseEmployee(IEmployeeOutAdo iEmployeePersistancePort)
         {
             _iEmployeePersistancePort = iEmployeePersistancePort;
         }

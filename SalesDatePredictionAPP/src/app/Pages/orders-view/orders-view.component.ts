@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { OrderService } from '../../Services/order.service';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -43,13 +43,14 @@ export class OrdersViewComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
+    private dialogRef: MatDialogRef<OrdersViewComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private orderService: OrderService) {
     this.customerId = data.customerId;
   }
 
   ngOnInit(): void {
-      this.getOrdersByCustomerId();
+    this.getOrdersByCustomerId();
     this.dataSource.data = this.orders;
   }
 
@@ -60,16 +61,12 @@ export class OrdersViewComponent implements OnInit {
           this.dataSource.data = response.data;
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
-        },
-        (error) => {
-          console.error('Error al obtener las Ordenes', error);
         }
       );
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  closeForm(): void {
+    this.dialogRef.close();
   }
 
 }

@@ -1,48 +1,155 @@
 .container {
-    width: 90%;
-    margin: auto;
-  }
-  .search-bar {
-    margin-bottom: 15px;
-  }
-  input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  th {
-    cursor: pointer;
-  }
-  button {
-    padding: 5px 10px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-  }
-  .view-orders {
-    color: red;
-    background: none;
-  }
-  .new-order {
-    color: green;
-    background: none;
-  }
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  .pagination button {
-    margin: 0 5px;
-  }
-  
+  width: 90%;
+  margin: auto;
+}
+
+.search-bar {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  cursor: pointer;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.view-orders {
+  color: red;
+  background: none;
+}
+
+.new-order {
+  color: green;
+  background: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination button {
+  margin: 0 5px;
+}
+
+.custom-red {
+  color: rgb(156, 60, 60) !important;
+}
+
+.custom-green {
+  color: rgb(58, 155, 58) !important;
+  ;
+}
+
+.actions-cell {
+  text-align: right;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-grid-1 {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.flex-30 {
+  flex: 0 0 50%;
+}
+
+.flex-30 h1 {
+  height: 50px;
+  text-align: left;
+  /* Alineación a la izquierda */
+  line-height: 75px;
+  /* Centra el texto verticalmente en el contenedor */
+  font-weight: 400;
+}
+
+.flex-70 {
+  flex: 0 0 50%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.align-left {
+  display: flex;
+  /* Utiliza flexbox para alinear el contenido */
+  justify-content: flex-start;
+  /* Alinea al principio (a la izquierda) */
+}
+
+.title-new-order {
+  font-size: 30px;
+  color: white;
+  background-color: rgb(31, 31, 31);
+  height: 50px;
+  text-align: left;
+  /* Alineación a la izquierda */
+  padding: 10px 50px;
+  /* Ajuste del padding para que solo haya espacio a los lados */
+  margin: 0;
+  line-height: 50px;
+  /* Centra el texto verticalmente en el contenedor */
+  font-weight: 400;
+}
+
+.logo {
+  width: 150px;
+  /* Ajusta el tamaño del logo */
+  height: auto;
+  /* Mantiene la proporción del logo */
+  display: block;
+  /* Para asegurar que el logo no se mezcle con el texto */
+  margin-bottom: 10px;
+  /* Añade un margen si es necesario */
+}
+
+.bg-black-header {
+  background-color: rgb(31, 31, 31);
+}
+
+.align-right {
+  display: flex;
+  /* Utiliza flexbox para alinear el contenido */
+  justify-content: flex-end;
+  /* Alinea al principio (a la izquierda) */
+}
+
+.top {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.tabla-borde{
+  border-color: 1px solid black !important ;
+}

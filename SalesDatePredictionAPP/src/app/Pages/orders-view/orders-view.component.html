@@ -1,46 +1,47 @@
 <div class="mat-elevation-z8">
+  <h3 class="title-new-order">Customer AHPOP - Order</h3>
+
+  <div style="max-height: 600px; overflow-y: auto;">
     <table mat-table [dataSource]="dataSource" matSort>
-      <!-- Order ID Column -->
+
       <ng-container matColumnDef="orderId">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Order ID</th>
         <td mat-cell *matCellDef="let order">{{ order.orderid }}</td>
       </ng-container>
-  
-      <!-- Required Date Column -->
+
       <ng-container matColumnDef="requiredDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Required Date</th>
         <td mat-cell *matCellDef="let order">{{ order.requireddate | date: 'dd/MM/yyyy' }}</td>
       </ng-container>
-  
-      <!-- Skipped Date Column -->
+
       <ng-container matColumnDef="skippedDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Skipped Date</th>
         <td mat-cell *matCellDef="let order">{{ order.shippeddate | date: 'dd/MM/yyyy' }}</td>
       </ng-container>
-  
-      <!-- Ship Name Column -->
+
       <ng-container matColumnDef="shipName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Ship Name</th>
         <td mat-cell *matCellDef="let order">{{ order.shipname }}</td>
       </ng-container>
-  
-      <!-- Ship Address Column -->
+
       <ng-container matColumnDef="shipAddress">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Ship Address</th>
         <td mat-cell *matCellDef="let order">{{ order.shipaddress }}</td>
       </ng-container>
-  
-      <!-- Ship City Column -->
+
       <ng-container matColumnDef="shipCity">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Ship City</th>
         <td mat-cell *matCellDef="let order">{{ order.shipcity }}</td>
       </ng-container>
-  
-      <!-- Header and Row Definitions -->
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  
-    <!-- Paginación -->
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   </div>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  <div class="form-actions">
+    <button mat-button type="button" (click)="closeForm()" class="red-text">CLOSE</button>
+  </div>
+</div>

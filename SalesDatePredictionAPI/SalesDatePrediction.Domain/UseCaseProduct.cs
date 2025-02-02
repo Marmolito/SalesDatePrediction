@@ -12,10 +12,10 @@ namespace Domain.Aplication
 {
     public class UseCaseProduct : IProduct
     {
-        private readonly IProductPersistancePort _iProductPersistancePort;
+        private readonly IProductOutAdo _iProductPersistancePort;
         const string errorMessagge = "No se encontraron Productos";
 
-        public UseCaseProduct(IProductPersistancePort iProductPersistancePort)
+        public UseCaseProduct(IProductOutAdo iProductPersistancePort)
         {
             _iProductPersistancePort = iProductPersistancePort;
         }

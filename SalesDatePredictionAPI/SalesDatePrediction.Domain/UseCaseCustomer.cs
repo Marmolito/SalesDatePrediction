@@ -12,10 +12,10 @@ namespace Domain.Aplication
 {
     public class UseCaseCustomer : ICustomer
     {
-        private readonly ICustomerPersistancePort _iCustomerPersistancePort;
+        private readonly ICustomerOutAdo _iCustomerPersistancePort;
         const string errorMessagge = "No se encontraron Clientes";
 
-        public UseCaseCustomer(ICustomerPersistancePort iCustomerPersistancePort)
+        public UseCaseCustomer(ICustomerOutAdo iCustomerPersistancePort)
         {
             _iCustomerPersistancePort = iCustomerPersistancePort;
         }

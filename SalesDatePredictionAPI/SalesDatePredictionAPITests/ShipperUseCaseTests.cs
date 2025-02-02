@@ -20,7 +20,7 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetAll_ReturnsShippers_WhenShippersExist()
         {
-            var mockShipperPersistancePort = new Mock<IShipperPersistancePort>();
+            var mockShipperPersistancePort = new Mock<IShipperOutAdo>();
             var expectedShippers = new List<ShipperModel>
         {
             new ShipperModel { shipperid = 1, companyname = "Shipper A" },
@@ -42,7 +42,7 @@ namespace SalesDatePredictionAPITests
         [Fact]
         public async Task GetAll_ThrowsNotFoundException_WhenNoShippersExist()
         {
-            var mockShipperPersistancePort = new Mock<IShipperPersistancePort>();
+            var mockShipperPersistancePort = new Mock<IShipperOutAdo>();
             var errorMessage = "No se encontraron Transportadoras";
 
             mockShipperPersistancePort

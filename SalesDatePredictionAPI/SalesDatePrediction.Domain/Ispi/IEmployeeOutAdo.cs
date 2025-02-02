@@ -2,7 +2,7 @@
 
 namespace SalesDatePrediction.Domain.Ispi
 {
-    public interface IEmployeePersistancePort
+    public interface IEmployeeOutAdo
     {
         Task<IEnumerable<EmployeeModel>> GetAll();
     }

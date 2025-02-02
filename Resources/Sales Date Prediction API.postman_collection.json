@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "17e46ca5-b6a2-449f-8280-2c62c7f53827",
+		"name": "Sales Date Prediction API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17993387"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Get All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shippers",
+			"item": [
+				{
+					"name": "Get All Shippers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Shipper",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Shipper"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get Orders By Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Orders/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Order With Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"custID\": 1,\r\n  \"empID\": 9,\r\n  \"shipperID\": 3,\r\n  \"shipName\": \"Shipper ZHISN\",\r\n  \"shipAddress\": \"Transversal prueba\",\r\n  \"shipCity\": \"Bogota\",\r\n  \"orderDate\": \"2025-02-01\",\r\n  \"requiredDate\": \"2025-02-01\",\r\n  \"shippedDate\": \"2025-02-01\",\r\n  \"freight\": 10000,\r\n  \"shipCountry\": \"Colombia\",\r\n  \"productID\": 77,\r\n  \"unitPrice\": 13.00,\r\n  \"qty\": 1,\r\n  \"discount\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
